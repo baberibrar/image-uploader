@@ -54,6 +54,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 
+CSRF_COOKIE_SECURE = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = ["*"]
@@ -66,7 +67,10 @@ CORS_ALLOW_METHODS = [
 'PUT',
 ]
 ALLOWED_HOSTS = ['*']
-
+CORS_ALLOWED_ORIGINS = [
+    "https://legendary-acorn-6pw77p6rx535vp5-8000.app.github.dev",
+    "http://localhost:8000",
+]
 
 ROOT_URLCONF = "imageuploader.urls"
 
@@ -137,6 +141,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
